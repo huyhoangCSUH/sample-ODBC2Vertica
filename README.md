@@ -34,3 +34,28 @@ Port = 5433
 [ODBC]
 Threading = 1 
 ```
+
+Step 3: Test if Vertica can be connected through ODBC interactive client by typing in:
+
+```
+isql mydsn
+```
+if it shows something like this, it means you can start writing your C++ code.
+```
++---------------------------------------+
+| Connected!                            |
+|                                       |
+| sql-statement                         |
+| help [tablename]                      |
+| quit                                  |
+|                                       |
++---------------------------------------+
+SQL> 
+```
+
+Step 4: In your C++ program, provide the right dsn to the variable dsnName
+
+Step 5: Compile the program as follow:
+```
+g++ your_program.cpp -lodbc
+```
