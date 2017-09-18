@@ -6,19 +6,19 @@ This program uses unixODBC run on an Ubuntu machine
 Step 1: Install unixODBC
 On Ubuntu, type in:
 
-'''
+```
 sudo apt-get install unixodbc-dev unixodbc-bin unixodbc
-'''
+```
 
 Step 2: Create an ODBC DSN: 
 
 Open the file 
-'''
+```
 /etc/odbc.ini 
-'''
+```
 then create a DSN as follow:
 
-'''
+```
 [ODBC Data Sources]
 mydsn = "vmartdb"
 
@@ -33,4 +33,4 @@ Port = 5433
 
 [ODBC]
 Threading = 1 
-'''
+```
