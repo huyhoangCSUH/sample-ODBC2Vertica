@@ -35,7 +35,26 @@ Port = 5433
 Threading = 1 
 ```
 
-Step 3: Test if Vertica can be connected through ODBC interactive client by typing in:
+Step 3:
+Create a file named /etc/vertica.ini with the [Driver] section:
+
+```
+[Driver]
+ODBCInstLib = /usr/lib/x86_64-linux-gnu/libodbcinst.a(libodbcinst.so.1)
+DriverManagerEncoding = UTF-8
+ErrorMessagesPath = /opt/vertica/lib64
+LogLevel=4
+LogPath = /tmp
+Locale = en_US@collation=binary
+```
+
+This file doesn't have to be in a specific folder actually, users can put it everywhere and export the environment variable as follow:
+
+```
+export VERTICAINI=/etc/vertica.ini
+```
+
+Step 4: Test if Vertica can be connected through ODBC interactive client by typing in:
 
 ```
 isql mydsn
